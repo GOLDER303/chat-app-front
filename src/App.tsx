@@ -4,7 +4,7 @@ import LoginPage from "./pages/LoginPage"
 
 const router = createBrowserRouter([
     {
-        path: "/chats/:id",
+        path: "/chats/:id?",
         element: <ChatPage />,
         children: [],
     },
