@@ -20,7 +20,7 @@ const ChatList: React.FC = () => {
     return (
         <div className="w-72">
             {/* Search bar */}
-            <div className="flex items-center justify-around w-11/12 h-12 bg-secondary rounded-xl text-bright">
+            <div className="flex items-center justify-around w-11/12 h-12 mx-auto bg-secondary rounded-xl text-bright">
                 <p>Search</p>
             </div>
 
