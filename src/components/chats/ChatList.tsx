@@ -1,8 +1,21 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { ChatInfoDTO } from "../../dtos/ChatInfo.dto"
+import { getUserChats } from "../../services/ChatService"
 
 const ChatList: React.FC = () => {
     const [chatsInfos, setChatsInfos] = useState<ChatInfoDTO[]>([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const userChats = await getUserChats()
+                setChatsInfos(userChats)
+            } catch (error) {
+                console.error((error as Error).message)
+            }
+        }
+        fetchData()
+    }, [])
 
     return (
         <div className="w-72">
